@@ -1,15 +1,14 @@
 package racingcar.view;
 
 import java.util.List;
-import java.util.Map;
+import racingcar.domain.Car;
 
 public class OutputView {
 
-    public static void printCarPositions(Map<String, Integer> carPositions) {
-        for (String name : carPositions.keySet()) {
-            int position = carPositions.get(name);
-            System.out.print(name + " : ");
-            for (int i = 0; i < position; i++) {
+    public static void printCarPositions(List<Car> cars) {
+        for (Car car : cars ) {
+            System.out.print(car.getName() + " : ");
+            for (int i = 0; i < car.getPosition(); i++) {
                 System.out.print("-");
             }
             System.out.println();

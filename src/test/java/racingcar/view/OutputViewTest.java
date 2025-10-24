@@ -5,24 +5,26 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.Car;
 
 public class OutputViewTest {
 
     @Test
     void 자동차_위치_출력() {
 
-        Map<String, Integer> carPositions = new LinkedHashMap<>();
-        carPositions.put("pobi", 2);
-        carPositions.put("crong", 3);
+        List<Car> cars = List.of(new Car("pobi"), new Car("crong"));
+        cars.get(0).move(); // 포지션 1
+        cars.get(0).move(); // 포지션 2
+        cars.get(1).move(); // 포지션 1
+        cars.get(1).move(); // 포지션 2
+        cars.get(1).move(); // 포지션 3
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        OutputView.printCarPositions(carPositions);
+        OutputView.printCarPositions(cars);
 
         String expected = "pobi : --\ncrong : ---\n\n";
         assertThat(out.toString()).isEqualToNormalizingNewlines(expected);
