@@ -42,7 +42,7 @@ public class GameControllerTest {
         List<String> winners = List.of("pobi", "crong");
         OutputView.printWinners(winners);
 
-        String expected = "최종 우승자: pobi, crong\n";
+        String expected = "최종 우승자 : pobi, crong\n";
         assertThat(out.toString()).isEqualToNormalizingNewlines(expected);
     }
 }
