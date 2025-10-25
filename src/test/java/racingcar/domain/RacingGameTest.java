@@ -28,4 +28,14 @@ public class RacingGameTest {
 
         assertThat(cars.get(0).getPosition()).isEqualTo(0);
     }
+
+    @Test
+    void moveIfPossible_메서드_테스트() {
+
+        Car car = new Car("pobi");
+        RacingGame game = new RacingGame(List.of(car));
+
+        game.moveIfPossible(car, 4);
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
 }

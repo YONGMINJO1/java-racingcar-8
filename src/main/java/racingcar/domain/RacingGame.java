@@ -18,19 +18,11 @@ public class RacingGame {
         }
     }
 
-    private void moveIfPossible(Car car, int randomNumber) {
+    protected void moveIfPossible(Car car, int randomNumber) {
         if (randomNumber >= MOVE_THRESHOLD) {
             car.move();
         }
     }
-
-//    public void moveCars(List<Integer> randomNumbers) {
-//        for (int i = 0; i < cars.size(); i++) {
-//            if (randomNumbers.get(i) >= MOVE_THRESHOLD) {
-//                cars.get(i).move();
-//            }
-//        }
-//    }
 
     public List<Car> getCars() {
         return cars;
