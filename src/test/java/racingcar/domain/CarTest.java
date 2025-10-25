@@ -26,4 +26,11 @@ public class CarTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름에 공백을 사용할 수 없습니다.");
     }
+
+    @Test
+    void 자동차가_이동시_위치가_1증가() {
+        Car car = new Car("pobi");
+        car.move();
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
 }
