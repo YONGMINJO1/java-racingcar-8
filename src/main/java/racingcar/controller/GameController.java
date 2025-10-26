@@ -15,6 +15,7 @@ public class GameController {
     }
 
     public void play() {
+        OutputView.printRaceStart();
         runRounds();
         OutputView.printWinners(game.getWinners());
     }
